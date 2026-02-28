@@ -26,7 +26,7 @@ class GetRequestByIdHandler:
         Обработать запрос GetRequestById
         
         Returns:
-            RequestDto — упрощённая модель для чтения
+            RequestDto - упрощённая модель для чтения
         
         Raises:
             ValueError: Если заявка не найдена

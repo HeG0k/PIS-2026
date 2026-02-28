@@ -6,15 +6,15 @@
 
 ### Успешный сценарий
 
-- **`sequence-happy.puml`** — PlantUML исходник для happy path
-- **`sequence-happy.png`** — Экспортированная диаграмма (PNG)
+- **`sequence-happy.puml`** - PlantUML исходник для happy path
+- **`sequence-happy.png`** - Экспортированная диаграмма (PNG)
 
 **Описание:** Полный успешный поток создания заявки на поиск и формирования группы с двумя транзакциями.
 
 ### Сценарий с ошибкой
 
-- **`sequence-error-notification.puml`** — PlantUML исходник для error case
-- **`sequence-error-notification.png`** — Экспортированная диаграмма (PNG)
+- **`sequence-error-notification.puml`** - PlantUML исходник для error case
+- **`sequence-error-notification.png`** - Экспортированная диаграмма (PNG)
 
 **Описание:** Сценарий, где Notification Service (SMS) недоступен, но группа создаётся успешно, а уведомление ставится в очередь для retry.
 

@@ -8,9 +8,9 @@
 ## Цель работы
 
 Заменить REST API на **gRPC** для межсервисной коммуникации:
-- **Схемы** — `.proto` файлы
-- **Server/Client** — gRPC реализация
-- **Streaming** — real-time обновления
+- **Схемы** - `.proto` файлы
+- **Server/Client** - gRPC реализация
+- **Streaming** - real-time обновления
 
 ---
 
@@ -107,10 +107,10 @@ lab-09/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **Bidirectional Streaming** (+5) — двусторонний поток
-* **Interceptors** (+4) — аутентификация, логирование
-* **gRPC-Web** (+3) — gRPC из браузера
-* **Load Balancing** (+3) — клиентский балансировщик
+* **Bidirectional Streaming** (+5) - двусторонний поток
+* **Interceptors** (+4) - аутентификация, логирование
+* **gRPC-Web** (+3) - gRPC из браузера
+* **Load Balancing** (+3) - клиентский балансировщик
 <!-- END:bonuses -->
 
 ## Контрольные вопросы

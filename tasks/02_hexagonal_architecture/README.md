@@ -5,7 +5,7 @@
 
 ---
 
-> 🚀 **Важно:** Эта лаба — про **архитектурное проектирование**, а не про глубокую реализацию. Создаём структуру проекта, интерфейсы портов и минимальные примеры каждого слоя. Детальное наполнение будет в Lab #3-5!
+> 🚀 **Важно:** Эта лаба - про **архитектурное проектирование**, а не про глубокую реализацию. Создаём структуру проекта, интерфейсы портов и минимальные примеры каждого слоя. Детальное наполнение будет в Lab #3-5!
 
 ---
 
@@ -112,7 +112,7 @@ Domain **не знает** о Infrastructure!
 
 ### Часть 2. Создание структуры проекта (скелет)
 
-Создайте **скелет проекта** — структуру папок без детальной реализации:
+Создайте **скелет проекта** - структуру папок без детальной реализации:
 
 ```
 your-service/
@@ -163,7 +163,7 @@ your-service/
 
 #### Входящие порты (что может делать клиент):
 
-**CreateTaskUseCase** — интерфейс для создания задачи:
+**CreateTaskUseCase** - интерфейс для создания задачи:
 ```python
 # application/port/in/create_task_use_case.py
 from abc import ABC, abstractmethod
@@ -188,7 +188,7 @@ class CreateTaskUseCase(ABC):
         pass
 ```
 
-**GetTaskUseCase** — интерфейс для получения задачи:
+**GetTaskUseCase** - интерфейс для получения задачи:
 ```python
 # application/port/in/get_task_use_case.py
 from abc import ABC, abstractmethod
@@ -208,7 +208,7 @@ class GetTaskUseCase(ABC):
 
 #### Исходящие порты (что нужно системе от внешнего мира):
 
-**TaskRepository** — интерфейс для работы с БД:
+**TaskRepository** - интерфейс для работы с БД:
 ```python
 # application/port/out/task_repository.py
 from abc import ABC, abstractmethod
@@ -227,7 +227,7 @@ class TaskRepository(ABC):
         pass
 ```
 
-**NotificationService** — интерфейс для уведомлений:
+**NotificationService** - интерфейс для уведомлений:
 ```python
 # application/port/out/notification_service.py
 from abc import ABC, abstractmethod
@@ -253,7 +253,7 @@ class NotificationService(ABC):
 
 Создайте **по одному простому примеру** для каждого слоя, чтобы продемонстрировать их взаимодействие.
 
-#### Domain Layer — простая модель Task:
+#### Domain Layer - простая модель Task:
 
 ```python
 # domain/models/task.py
@@ -278,7 +278,7 @@ class Task:
 - ✅ 1-2 метода для демонстрации
 - ❌ НЕ требуется сложная бизнес-логика (это будет в Lab #3)
 
-#### Application Layer — скелет сервиса:
+#### Application Layer - скелет сервиса:
 
 ```python
 # application/service/task_service.py
@@ -306,7 +306,7 @@ class TaskService:
 - ✅ Методы объявлены с TODO-комментариями
 - ❌ НЕ требуется полная реализация (это будет в Lab #4)
 
-#### Infrastructure Layer — простой адаптер:
+#### Infrastructure Layer - простой адаптер:
 
 ```python
 # infrastructure/adapter/out/in_memory_task_repository.py
@@ -352,7 +352,7 @@ class DependencyContainer:
         return self.task_service
 ```
 
-**Ключевой принцип:** TaskService **не создаёт** зависимости сам — они передаются через конструктор!
+**Ключевой принцип:** TaskService **не создаёт** зависимости сам - они передаются через конструктор!
 
 📖 **Полный пример:** см. [examples/src_python/infrastructure/config/](examples/src_python/infrastructure/config/)
 
@@ -409,10 +409,10 @@ lab-02/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **Диаграмма в PlantUML с C4 Model** (+5) — использование C4 диаграммы (Context, Container, Component) вместо простой схемы слоёв
-* **Альтернативная архитектурная диаграмма** (+4) — дополнительная диаграмма последовательности (sequence diagram), показывающая поток вызовов через порты
-* **Документация принципов SOLID** (+3) — раздел в Architecture.md с объяснением как каждый принцип SOLID применён в архитектуре
-* **Сравнение с Layered Architecture** (+3) — диаграмма и текст, сравнивающие hexagonal и классическую трёхслойную архитектуру
+* **Диаграмма в PlantUML с C4 Model** (+5) - использование C4 диаграммы (Context, Container, Component) вместо простой схемы слоёв
+* **Альтернативная архитектурная диаграмма** (+4) - дополнительная диаграмма последовательности (sequence diagram), показывающая поток вызовов через порты
+* **Документация принципов SOLID** (+3) - раздел в Architecture.md с объяснением как каждый принцип SOLID применён в архитектуре
+* **Сравнение с Layered Architecture** (+3) - диаграмма и текст, сравнивающие hexagonal и классическую трёхслойную архитектуру
 <!-- END:bonuses -->
 
 ## Контрольные вопросы для защиты
@@ -431,15 +431,15 @@ lab-02/
 ## Полезные ресурсы
 
 ### 📖 Документация и примеры
-- **[Макет отчёта](Макет_отчета.md)** — шаблон для заполнения
-- **Примеры структуры проекта** — см. раздел "Часть 2" выше
+- **[Макет отчёта](Макет_отчета.md)** - шаблон для заполнения
+- **Примеры структуры проекта** - см. раздел "Часть 2" выше
 
 ### 🔗 Внешние ресурсы
-- [Alistair Cockburn: Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) — оригинальная статья автора паттерна
-- [Netflix: Ready for changes with Hexagonal Architecture](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749) — опыт Netflix
-- [Get Your Hands Dirty on Clean Architecture (book)](https://www.packtpub.com/product/get-your-hands-dirty-on-clean-architecture/9781839211966) — практическое руководство
-- [Martin Fowler: Dependency Injection](https://martinfowler.com/articles/injection.html) — про DI принцип
-- [Uncle Bob: Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) — фундаментальная статья
+- [Alistair Cockburn: Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) - оригинальная статья автора паттерна
+- [Netflix: Ready for changes with Hexagonal Architecture](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749) - опыт Netflix
+- [Get Your Hands Dirty on Clean Architecture (book)](https://www.packtpub.com/product/get-your-hands-dirty-on-clean-architecture/9781839211966) - практическое руководство
+- [Martin Fowler: Dependency Injection](https://martinfowler.com/articles/injection.html) - про DI принцип
+- [Uncle Bob: Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) - фундаментальная статья
 
 ## Срок сдачи
 

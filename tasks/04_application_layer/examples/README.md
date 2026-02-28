@@ -1,4 +1,4 @@
-# Application Layer — Request Service
+# Application Layer - Request Service
 
 Примеры реализации прикладного слоя для **Request Service** (ПСО «Юго-Запад»).
 
@@ -38,11 +38,11 @@ application/
 
 ### Command Handler Pipeline
 
-1. **Валидация** — проверка входных данных
-2. **Загрузка** — получение агрегата из репозитория (если нужно)
-3. **Выполнение** — вызов метода домена
-4. **Сохранение** — запись изменений через Repository
-5. **События** — публикация Domain Events
+1. **Валидация** - проверка входных данных
+2. **Загрузка** - получение агрегата из репозитория (если нужно)
+3. **Выполнение** - вызов метода домена
+4. **Сохранение** - запись изменений через Repository
+5. **События** - публикация Domain Events
 
 ---
 
@@ -85,14 +85,14 @@ dto = handler.handle(query)  # Возвращает RequestDto
 ## Связь с частями системы
 
 ### Domain Layer (Lab #3)
-- **Request** — aggregate root
-- **Group**, **Zone** — доменные объекты
-- **RequestStatus** — value object
+- **Request** - aggregate root
+- **Group**, **Zone** - доменные объекты
+- **RequestStatus** - value object
 
 ### Infrastructure Layer (Lab #5)
-- **RequestRepository** — реализация (PostgreSQL, in-memory)
-- **EventBus** — публикация событий
-- **REST Controller** — HTTP endpoints
+- **RequestRepository** - реализация (PostgreSQL, in-memory)
+- **EventBus** - публикация событий
+- **REST Controller** - HTTP endpoints
 
 ---
 

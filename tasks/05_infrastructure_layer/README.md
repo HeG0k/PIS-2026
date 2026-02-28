@@ -12,9 +12,9 @@
 ## Цель работы
 
 Реализовать **инфраструктурный слой** (Infrastructure Layer):
-- **Repository** — сохранение агрегатов в PostgreSQL
-- **REST Controller** — HTTP API для команд/запросов
-- **Event Publisher** — публикация доменных событий
+- **Repository** - сохранение агрегатов в PostgreSQL
+- **REST Controller** - HTTP API для команд/запросов
+- **Event Publisher** - публикация доменных событий
 
 ---
 
@@ -48,10 +48,10 @@
 Создайте HTTP API для команд и запросов.
 
 **Эндпоинты:**
-- `POST /api/requests` — создать заявку
-- `POST /api/requests/{id}/assign-group` — назначить группу
-- `GET /api/requests/{id}` — получить заявку
-- `GET /api/requests` — список активных заявок
+- `POST /api/requests` - создать заявку
+- `POST /api/requests/{id}/assign-group` - назначить группу
+- `GET /api/requests/{id}` - получить заявку
+- `GET /api/requests` - список активных заявок
 
 📖 **Пример:** [examples/infrastructure/adapter/in/request_controller.py](examples/infrastructure/adapter/in/request_controller.py)
 
@@ -108,10 +108,10 @@ lab-05/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **Docker Compose для всей системы** (+5) — app + db + migrations
-* **OpenAPI Swagger UI** (+4) — автодокументация API
-* **Health Check endpoint** (+3) — `/health` с проверкой БД
-* **CORS configuration** (+3) — настройка для фронтенда
+* **Docker Compose для всей системы** (+5) - app + db + migrations
+* **OpenAPI Swagger UI** (+4) - автодокументация API
+* **Health Check endpoint** (+3) - `/health` с проверкой БД
+* **CORS configuration** (+3) - настройка для фронтенда
 <!-- END:bonuses -->
 
 ## Контрольные вопросы для защиты

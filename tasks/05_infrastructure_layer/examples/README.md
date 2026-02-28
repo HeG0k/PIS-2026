@@ -1,4 +1,4 @@
-# Infrastructure Layer — Request Service
+# Infrastructure Layer - Request Service
 
 Примеры реализации инфраструктурного слоя для **Request Service** (ПСО «Юго-Запад»).
 
@@ -27,12 +27,12 @@ infrastructure/
 ### Адаптеры (Adapters)
 
 **Входящие адаптеры** (Driving Adapters):
-- REST Controller — HTTP запросы → команды/запросы
-- CLI — консольные команды
+- REST Controller - HTTP запросы → команды/запросы
+- CLI - консольные команды
 
 **Исходящие адаптеры** (Driven Adapters):
-- Repository — доменные модели → БД
-- Event Publisher — события → RabbitMQ/Kafka
+- Repository - доменные модели → БД
+- Event Publisher - события → RabbitMQ/Kafka
 
 ### ORM vs Domain Model
 
@@ -111,15 +111,15 @@ alembic downgrade -1
 ## Связь с другими слоями
 
 ### Domain Layer (Lab #3)
-- **Request** — агрегат, который сохраняется
+- **Request** - агрегат, который сохраняется
 
 ### Application Layer (Lab #4)
 - **CreateRequestHandler** → вызывает `repository.save()`
 - **GetRequestByIdHandler** → вызывает `repository.find_by_id()`
 
 ### Infrastructure Layer (эта лаба)
-- **RequestRepositoryImpl** — реализует интерфейс из Application
-- **RequestController** — вызывает handlers
+- **RequestRepositoryImpl** - реализует интерфейс из Application
+- **RequestController** - вызывает handlers
 
 ---
 
@@ -166,9 +166,9 @@ def test_create_request_via_api():
 
 ## Технологии
 
-- **FastAPI** — REST API
-- **SQLAlchemy** — ORM
-- **Alembic** — миграции
-- **PostgreSQL** — БД
-- **Docker Compose** — оркестрация
-- **Testcontainers** — тесты с реальной БД
+- **FastAPI** - REST API
+- **SQLAlchemy** - ORM
+- **Alembic** - миграции
+- **PostgreSQL** - БД
+- **Docker Compose** - оркестрация
+- **Testcontainers** - тесты с реальной БД

@@ -1,4 +1,4 @@
-Validate student directory — Actions notes
+Validate student directory - Actions notes
 =======================================
 
 This page explains how to test and deploy the `validate-student-dir` workflow and related scripts.
@@ -20,20 +20,20 @@ How the manual run works:
 Testing tips:
 - Create a test PR that modifies a file outside your own `./students/...` folder; the workflow should comment & label the PR.
 - Use a forked PR to verify behavior without writing repo secrets (note: secrets are not available to forked workflows).
-- When violations are found the validation job now fails, labels the PR, posts guidance, and closes the pull request automatically — the status check must be green before merging.
+- When violations are found the validation job now fails, labels the PR, posts guidance, and closes the pull request automatically - the status check must be green before merging.
 - If один PR затрагивает несколько `task_XX`, проверка завершится ошибкой: каждое задание должно отправляться отдельным PR.
 
 Debugging:
 - The scripts log to stdout; view the Actions run logs.
-- The script writes `.github/check_result.json` on the runner — useful to debug locally: mimic that file.
+- The script writes `.github/check_result.json` on the runner - useful to debug locally: mimic that file.
 - Changed files are now sourced exclusively through the GitHub REST API (`GET /repos/{owner}/{repo}/pulls/{pull_number}/files`). Ensure the workflow has a valid `GITHUB_TOKEN` and watch for `Fetched ... changed files via GitHub API` log entries.
 - New debug step: the workflow now prints the `validate` step outcome and the contents of `.github/check_result.json` (including `exit_code`) in the logs. This helps diagnose why a run passed or failed.
 
 Exit codes produced by the validator (written to `.github/check_result.json`):
-- `0` — success; all changed files are within the allowed directory.
-- `2` — one or more files were changed outside the allowed directory (validation failure).
-- `3` — the PR author could not be mapped to `students/students.csv` (manual check required).
-- `4` — the PR touches more than one `task_XX` directory; one PR must contain a single task.
+- `0` - success; all changed files are within the allowed directory.
+- `2` - one or more files were changed outside the allowed directory (validation failure).
+- `3` - the PR author could not be mapped to `students/students.csv` (manual check required).
+- `4` - the PR touches more than one `task_XX` directory; one PR must contain a single task.
 
 Note about comment/label step:
 - The `Comment, label, and close PR on failure` step runs only when the validation step fails. The debug step runs always and prints details you can copy into issues for troubleshooting.

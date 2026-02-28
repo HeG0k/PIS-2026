@@ -1,4 +1,4 @@
-# Lab 01 — Minimal Auto‑Review Prompt (EN)
+# Lab 01 - Minimal Auto‑Review Prompt (EN)
 
 Use this prompt to run a fast, accurate, and low‑cost review of a Lab 01 submission. It limits scope, avoids unnecessary reads, and standardizes the output.
 
@@ -16,7 +16,7 @@ Review the student’s Lab 01 work strictly against the official requirements an
 ## Context locations (fixed)
 
 - Variants (topic list): `tasks/task_01/Варианты.md`
-- Requirements: `tasks/task_01/readme.md` — sections “Задания”, “Минимальные технические требования”, “Артефакты”, “Критерии оценивания”, “Бонусы”
+- Requirements: `tasks/task_01/readme.md` - sections “Задания”, “Минимальные технические требования”, “Артефакты”, “Критерии оценивания”, “Бонусы”
 - Student work root: `students/<ID>/task_01/{src,doc}`
 
 Variant detection rule:
@@ -54,12 +54,12 @@ Do not open excluded types (e.g., images under `img/`) and do not traverse unrel
 - Minimal technical requirements: For each item, mark Yes/Partial/No with 1 evidence point.
 - Artifacts: list what is present/missing (explicitly state if a publication link to GitHub Pages/Netlify/Vercel is present or missing).
 - Rubric scoring (sum = 100):
-  - Semantics/Structure — X/20 (one‑sentence justification)
-  - Responsive layout — X/25
-  - Accessibility — X/20
-  - Quality/Validity — X/15
-  - Code/Project structure — X/10
-  - Publication & Report — X/10
+  - Semantics/Structure - X/20 (one‑sentence justification)
+  - Responsive layout - X/25
+  - Accessibility - X/20
+  - Quality/Validity - X/15
+  - Code/Project structure - X/10
+  - Publication & Report - X/10
 - Bonuses (+ up to 10): list achieved items.
 - Total: N/100 (+B bonus points)
 - Critical issues: 3–5 concise bullets.
@@ -67,7 +67,7 @@ Do not open excluded types (e.g., images under `img/`) and do not traverse unrel
 
 ## Additional guidance
 
-- Accessibility is judged by code indicators (headings hierarchy, alt texts, focus visibility, keyboard handling, contrast by palette) — do not run Lighthouse.
+- Accessibility is judged by code indicators (headings hierarchy, alt texts, focus visibility, keyboard handling, contrast by palette) - do not run Lighthouse.
 - If a requirement is partially met (e.g., Flex used, Grid nominal), mark “Partial” and explain briefly.
 - If publication link is absent in code/report, mark it missing (do not invent links).
 - Keep the whole response compact, bullet‑based, and free of large code quotations.

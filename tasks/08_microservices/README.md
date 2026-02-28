@@ -8,9 +8,9 @@
 ## Цель работы
 
 Разбить монолит на **микросервисы** по bounded contexts:
-- **Request Service** — управление заявками
-- **Group Service** — управление группами
-- **Notification Service** — отправка уведомлений
+- **Request Service** - управление заявками
+- **Group Service** - управление группами
+- **Notification Service** - отправка уведомлений
 
 ---
 
@@ -103,9 +103,9 @@ lab-08/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **Service Mesh (Istio)** (+6) — Observability
-* **Saga Pattern** (+5) — Распределённые транзакции
-* **Tracing (Jaeger)** (+4) — Отслеживание запросов
+* **Service Mesh (Istio)** (+6) - Observability
+* **Saga Pattern** (+5) - Распределённые транзакции
+* **Tracing (Jaeger)** (+4) - Отслеживание запросов
 <!-- END:bonuses -->
 
 ## Контрольные вопросы

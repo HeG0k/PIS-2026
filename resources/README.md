@@ -4,7 +4,7 @@
 
 ## Исправление ошибок Stylelint в VS Code
 
-Ошибки, которые вы видите (например, `Expected "#333333" to be "#333"  color-hex-length`), генерирует Stylelint — линтер для CSS/SCSS.
+Ошибки, которые вы видите (например, `Expected "#333333" to be "#333"  color-hex-length`), генерирует Stylelint - линтер для CSS/SCSS.
 
 Чтобы VS Code показывал ошибки и помогал автоматически их исправлять, выполните следующие шаги.
 
@@ -92,4 +92,4 @@ yarn add --dev stylelint stylelint-config-standard
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 ```
 
-После установки Stylelint повторите шаги конфигурации и откройте файлы CSS в VS Code — расширение будет показывать ошибки и (при включённом автопофиксе) исправлять их.
+После установки Stylelint повторите шаги конфигурации и откройте файлы CSS в VS Code - расширение будет показывать ошибки и (при включённом автопофиксе) исправлять их.

@@ -1,4 +1,4 @@
-# Testing Strategy — Request Service
+# Testing Strategy - Request Service
 
 Примеры тестирования для **Request Service** (ПСО «Юго-Запад»).
 
@@ -30,11 +30,11 @@ tests/
 
 ```
       /\
-     /E2E\        10% — E2E тесты (медленные, хрупкие)
+     /E2E\        10% - E2E тесты (медленные, хрупкие)
     /------\
-   /Integration\  20% — Интеграционные (БД, API)
+   /Integration\  20% - Интеграционные (БД, API)
   /--------------\
- /  Unit Tests   \ 70% — Юнит-тесты (быстрые, стабильные)
+ /  Unit Tests   \ 70% - Юнит-тесты (быстрые, стабильные)
 /------------------\
 ```
 
@@ -51,9 +51,9 @@ tests/
 - Application Layer: handlers с mock-репозиториями
 
 **Инструменты:**
-- `pytest` — фреймворк
-- `unittest.mock` — мокирование
-- `pytest-cov` — покрытие
+- `pytest` - фреймворк
+- `unittest.mock` - мокирование
+- `pytest-cov` - покрытие
 
 **Скорость:** 🚀 Очень быстро (миллисекунды)
 
@@ -69,8 +69,8 @@ tests/
 - REST Controller ↔ Handlers
 
 **Инструменты:**
-- `testcontainers` — реальная PostgreSQL в Docker
-- `pytest-docker` — RabbitMQ в Docker
+- `testcontainers` - реальная PostgreSQL в Docker
+- `pytest-docker` - RabbitMQ в Docker
 
 **Скорость:** 🐢 Медленно (секунды)
 
@@ -84,8 +84,8 @@ tests/
 - Полный flow: POST /requests → assign group → activate → GET /requests/{id}
 
 **Инструменты:**
-- `fastapi.testclient` — HTTP клиент
-- `playwright` — браузерные тесты (опционально)
+- `fastapi.testclient` - HTTP клиент
+- `playwright` - браузерные тесты (опционально)
 
 **Скорость:** 🐌 Очень медленно (десятки секунд)
 
@@ -165,18 +165,18 @@ jobs:
 
 ### ✅ DO
 
-- **Изолируйте тесты** — каждый тест независим
-- **Используйте fixtures** — переиспользование setup/teardown
-- **Называйте тесты говорящими именами** — `test_should_not_activate_without_group`
-- **Тестируйте edge cases** — граничные значения, ошибки
-- **Моките внешние зависимости** — в юнит-тестах
+- **Изолируйте тесты** - каждый тест независим
+- **Используйте fixtures** - переиспользование setup/teardown
+- **Называйте тесты говорящими именами** - `test_should_not_activate_without_group`
+- **Тестируйте edge cases** - граничные значения, ошибки
+- **Моките внешние зависимости** - в юнит-тестах
 
 ### ❌ DON'T
 
-- **Не тестируйте фреймворк** — только свою логику
-- **Не дублируйте тесты** — один тест на один сценарий
-- **Не используйте production БД** — только testcontainers/in-memory
-- **Не игнорируйте падающие тесты** — "flaky tests" = технический долг
+- **Не тестируйте фреймворк** - только свою логику
+- **Не дублируйте тесты** - один тест на один сценарий
+- **Не используйте production БД** - только testcontainers/in-memory
+- **Не игнорируйте падающие тесты** - "flaky tests" = технический долг
 
 ---
 

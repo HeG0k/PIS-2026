@@ -88,4 +88,4 @@ class PhoneNumber:
         return f"+{self.country_code} {self.national_number}"
     
     # Равенство и хэш генерируются автоматически в @dataclass
-    # Два PhoneNumber с одинаковым number — ОДНО И ТО ЖЕ
+    # Два PhoneNumber с одинаковым number - ОДНО И ТО ЖЕ

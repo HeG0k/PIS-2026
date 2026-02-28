@@ -92,7 +92,7 @@ class Zone:
         return (lat_delta * km_per_deg_lat) * (lon_delta * km_per_deg_lon)
     
     # Равенство и хэш генерируются автоматически в @dataclass
-    # Два Zone с одинаковыми name и bounds — ОДНО И ТО ЖЕ
+    # Два Zone с одинаковыми name и bounds - ОДНО И ТО ЖЕ
 
 
 # Предопределённые зоны для ПСО «Юго-Запад»

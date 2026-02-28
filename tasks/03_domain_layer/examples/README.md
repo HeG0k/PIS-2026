@@ -1,4 +1,4 @@
-# Примеры для Лабораторной работы №3 — Domain Layer
+# Примеры для Лабораторной работы №3 - Domain Layer
 
 **Предметная область:** Поисково-спасательный отряд «Юго-Запад» (ПСО)
 
@@ -81,7 +81,7 @@ examples/
 
 ### 2. Aggregate Root (Request)
 
-**Request** — корень агрегата:
+**Request** - корень агрегата:
 - Единственная точка входа в агрегат
 - Защищает инварианты (бизнес-правила)
 - Регистрирует доменные события
@@ -103,10 +103,10 @@ examples/
 ### 4. Доменные события
 
 События регистрируются при изменении состояния:
-- `GroupAssignedToRequest` — когда группа назначена
-- `RequestActivated` — когда операция начата
-- `RequestZoneChanged` — когда зона изменена
-- `RequestCompleted` — когда операция завершена
+- `GroupAssignedToRequest` - когда группа назначена
+- `RequestActivated` - когда операция начата
+- `RequestZoneChanged` - когда зона изменена
+- `RequestCompleted` - когда операция завершена
 
 **Зачем нужны события?**
 - Уведомления (отправить SMS участникам)
@@ -119,15 +119,15 @@ examples/
 ### 1. Изучите доменные модели
 
 Начните с простых Value Objects:
-- [zone.py](domain/models/zone.py) — зона с координатами
-- [phone_number.py](domain/models/phone_number.py) — телефон с валидацией
+- [zone.py](domain/models/zone.py) - зона с координатами
+- [phone_number.py](domain/models/phone_number.py) - телефон с валидацией
 
 Затем Entity:
-- [group.py](domain/models/group.py) — группа участников
-- [volunteer.py](domain/models/volunteer.py) — волонтёр
+- [group.py](domain/models/group.py) - группа участников
+- [volunteer.py](domain/models/volunteer.py) - волонтёр
 
 И агрегат:
-- [request.py](domain/models/request.py) — заявка (корень)
+- [request.py](domain/models/request.py) - заявка (корень)
 
 ### 2. Изучите инварианты
 
@@ -208,10 +208,10 @@ pytest tests/
 
 ## 🎓 Вопросы для самопроверки
 
-1. Почему `Zone` — Value Object, а `Group` — Entity?
+1. Почему `Zone` - Value Object, а `Group` - Entity?
 2. Можно ли изменить `PhoneNumber` после создания?
 3. Что произойдёт если попытаться назначить группу с 2 участниками?
 4. Зачем регистрировать событие `GroupAssignedToRequest`?
-5. Где хранятся инварианты — в domain или application?
+5. Где хранятся инварианты - в domain или application?
 
 **Ответы в коде!** 😉

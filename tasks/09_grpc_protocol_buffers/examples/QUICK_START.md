@@ -1,4 +1,4 @@
-# gRPC Examples — Быстрый старт
+# gRPC Examples - Быстрый старт
 
 ## 1. Установка зависимостей
 
@@ -26,8 +26,8 @@ python -m grpc_tools.protoc `
 ```
 
 Сгенерированные файлы:
-- `generated/request_service_pb2.py` — классы Request, Zone, CreateRequestRequest, etc.
-- `generated/request_service_pb2_grpc.py` — RequestServiceServicer, RequestServiceStub
+- `generated/request_service_pb2.py` - классы Request, Zone, CreateRequestRequest, etc.
+- `generated/request_service_pb2_grpc.py` - RequestServiceServicer, RequestServiceStub
 
 ## 3. Запуск сервера
 

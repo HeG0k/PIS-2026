@@ -1,4 +1,4 @@
-# Microservices Architecture — Request & Group Services
+# Microservices Architecture - Request & Group Services
 
 Примеры реализации **микросервисной архитектуры** для ПСО «Юго-Запад».
 
@@ -53,9 +53,9 @@
 - `RequestCompleted` → уведомить Statistics Service
 
 **API:**
-- `POST /requests` — создать заявку
-- `GET /requests/{id}` — получить заявку
-- `PUT /requests/{id}/activate` — активировать заявку
+- `POST /requests` - создать заявку
+- `GET /requests/{id}` - получить заявку
+- `PUT /requests/{id}/activate` - активировать заявку
 
 **База данных:** `requests_db` (PostgreSQL)
 
@@ -76,9 +76,9 @@
 - `GroupAssignedToRequest` → группа занята
 
 **API:**
-- `POST /groups` — создать группу
-- `GET /groups/{id}` — получить группу
-- `PUT /groups/{id}/mark-ready` — отметить готовность
+- `POST /groups` - создать группу
+- `GET /groups/{id}` - получить группу
+- `PUT /groups/{id}/mark-ready` - отметить готовность
 
 **База данных:** `groups_db` (PostgreSQL)
 
@@ -411,19 +411,19 @@ group_service_url = f"http://{services[0]['ServiceAddress']}:{services[0]['Servi
 
 ## Преимущества микросервисов
 
-✅ **Независимое развёртывание** — Request Service можно деплоить отдельно  
-✅ **Масштабируемость** — можно масштабировать только Group Service  
-✅ **Технологическая гибкость** — Request Service на Python, Group Service на Go  
-✅ **Изоляция сбоев** — падение Group Service не ломает Request Service
+✅ **Независимое развёртывание** - Request Service можно деплоить отдельно  
+✅ **Масштабируемость** - можно масштабировать только Group Service  
+✅ **Технологическая гибкость** - Request Service на Python, Group Service на Go  
+✅ **Изоляция сбоев** - падение Group Service не ломает Request Service
 
 ---
 
 ## Недостатки микросервисов
 
-❌ **Сложность** — вместо 1 приложения теперь 3+ сервиса  
-❌ **Распределённые транзакции** — Saga, 2PC  
-❌ **Мониторинг** — нужен Prometheus, Grafana, Jaeger  
-❌ **Тестирование** — E2E тесты сложнее
+❌ **Сложность** - вместо 1 приложения теперь 3+ сервиса  
+❌ **Распределённые транзакции** - Saga, 2PC  
+❌ **Мониторинг** - нужен Prometheus, Grafana, Jaeger  
+❌ **Тестирование** - E2E тесты сложнее
 
 ---
 

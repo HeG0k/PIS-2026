@@ -136,7 +136,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           AI_RESPONSE_PATH: ai_review.md
           AI_MODEL: ${{ steps.ai.outputs.model }}
-          AI_COMMENT_NOTICE: "Не применяйте автоматически предложения модели — дождитесь подтверждения преподавателя."
+          AI_COMMENT_NOTICE: "Не применяйте автоматически предложения модели - дождитесь подтверждения преподавателя."
           AI_LABEL_INPUT: ${{ env.AI_REVIEW_LABEL }}
         run: |
           if [ -n "$AI_LABEL_INPUT" ]; then

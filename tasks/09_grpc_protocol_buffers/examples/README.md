@@ -1,4 +1,4 @@
-# gRPC & Protocol Buffers — Request Service
+# gRPC & Protocol Buffers - Request Service
 
 Примеры реализации **gRPC API** для Request Service (ПСО «Юго-Запад»).
 
@@ -40,11 +40,11 @@ Client                          Server
 
 ## Преимущества gRPC
 
-✅ **Производительность** — в 3-10 раз быстрее REST  
-✅ **HTTP/2** — мультиплексирование, server push  
-✅ **Streaming** — server/client/bidirectional streaming  
-✅ **Строгая типизация** — схема .proto как контракт  
-✅ **Code generation** — автогенерация клиентов (Python, Go, Java, C#)
+✅ **Производительность** - в 3-10 раз быстрее REST  
+✅ **HTTP/2** - мультиплексирование, server push  
+✅ **Streaming** - server/client/bidirectional streaming  
+✅ **Строгая типизация** - схема .proto как контракт  
+✅ **Code generation** - автогенерация клиентов (Python, Go, Java, C#)
 
 ---
 
@@ -392,16 +392,16 @@ python client/request_service_client.py
 
 ### ✅ Используйте gRPC:
 
-- **Микросервисы** — сервис-to-сервис коммуникация
-- **Высокая нагрузка** — 10k+ RPS
-- **Real-time** — streaming данных
-- **Polyglot** — клиенты на разных языках (Python, Go, Java)
+- **Микросервисы** - сервис-to-сервис коммуникация
+- **Высокая нагрузка** - 10k+ RPS
+- **Real-time** - streaming данных
+- **Polyglot** - клиенты на разных языках (Python, Go, Java)
 
 ### ❌ Не используйте gRPC:
 
-- **Browser** — нужен grpc-web (сложнее)
-- **Публичное API** — REST понятнее для сторонних разработчиков
-- **Отладка** — JSON легче читать в логах
+- **Browser** - нужен grpc-web (сложнее)
+- **Публичное API** - REST понятнее для сторонних разработчиков
+- **Отладка** - JSON легче читать в логах
 
 ---
 

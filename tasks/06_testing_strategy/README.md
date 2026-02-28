@@ -8,9 +8,9 @@
 ## Цель работы
 
 Создать комплексную **стратегию тестирования** для Request Service:
-- **Юнит-тесты** — домен, handlers
-- **Интеграционные тесты** — БД, API
-- **E2E-тесты** — полный сценарий
+- **Юнит-тесты** - домен, handlers
+- **Интеграционные тесты** - БД, API
+- **E2E-тесты** - полный сценарий
 
 ---
 
@@ -79,10 +79,10 @@ lab-06/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **Coverage > 90%** (+5) — pytest-cov
-* **Mutation Testing** (+5) — mutmut
-* **Performance Tests** (+3) — Locust
-* **Contract Testing** (+2) — Pact
+* **Coverage > 90%** (+5) - pytest-cov
+* **Mutation Testing** (+5) - mutmut
+* **Performance Tests** (+3) - Locust
+* **Contract Testing** (+2) - Pact
 <!-- END:bonuses -->
 
 ## Контрольные вопросы

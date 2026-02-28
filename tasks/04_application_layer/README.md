@@ -12,8 +12,8 @@
 ## Цель работы
 
 Реализовать **прикладной слой** (Application Layer) с разделением операций на:
-- **Команды** (Commands) — изменяют состояние домена
-- **Запросы** (Queries) — читают данные без изменений
+- **Команды** (Commands) - изменяют состояние домена
+- **Запросы** (Queries) - читают данные без изменений
 
 Это паттерн **CQRS (Command Query Responsibility Segregation)** на уровне интерфейса.
 
@@ -83,11 +83,11 @@ application/
 📖 **Примеры готовых команд:** см. [examples/application/command/](examples/application/command/)
 
 **Команды для Request Service** (ПСО):
-- `CreateRequestCommand` — создать новую заявку
-- `AssignGroupToRequestCommand` — назначить группу на заявку
-- `ActivateRequestCommand` — активировать операцию
-- `ChangeRequestZoneCommand` — изменить зону поиска
-- `CompleteRequestCommand` — завершить операцию
+- `CreateRequestCommand` - создать новую заявку
+- `AssignGroupToRequestCommand` - назначить группу на заявку
+- `ActivateRequestCommand` - активировать операцию
+- `ChangeRequestZoneCommand` - изменить зону поиска
+- `CompleteRequestCommand` - завершить операцию
 
 **Требования к командам:**
 - Иммутабельные DTO (dataclass frozen=True)
@@ -123,13 +123,13 @@ application/
 Создайте DTO для запросов, которые **только читают** данные (без изменений).
 
 **Запросы для Request Service:**
-- `GetRequestByIdQuery` — получить заявку по ID
-- `ListActiveRequestsQuery` — список активных заявок
-- `GetRequestsByCoordinatorQuery` — заявки координатора
+- `GetRequestByIdQuery` - получить заявку по ID
+- `ListActiveRequestsQuery` - список активных заявок
+- `GetRequestsByCoordinatorQuery` - заявки координатора
 
 **Read DTOs (результаты):**
-- `RequestDto` — упрощённая модель для чтения
-- `GroupDto`, `ZoneDto` — вложенные объекты
+- `RequestDto` - упрощённая модель для чтения
+- `GroupDto`, `ZoneDto` - вложенные объекты
 
 📖 **Готовые примеры queries:** [examples/application/query/](examples/application/query/)
 
@@ -215,10 +215,10 @@ lab-04/
 <!-- START:bonuses -->
 ## Бонусы (+ до 15)
 
-* **REST API контроллер** (+5) — HTTP endpoints для команд/запросов
-* **Bean Validation** (+4) — аннотации валидации (@NotBlank, @Valid)
-* **Exception Handling** (+3) — глобальный обработчик ошибок
-* **OpenAPI документация** (+3) — Swagger/OpenAPI спецификация
+* **REST API контроллер** (+5) - HTTP endpoints для команд/запросов
+* **Bean Validation** (+4) - аннотации валидации (@NotBlank, @Valid)
+* **Exception Handling** (+3) - глобальный обработчик ошибок
+* **OpenAPI документация** (+3) - Swagger/OpenAPI спецификация
 <!-- END:bonuses -->
 
 ## Контрольные вопросы для защиты
@@ -232,16 +232,16 @@ lab-04/
    - Клиент должен делать отдельный GET-запрос (CQRS)
 
 3. **Где должна выполняться валидация: в команде, обработчике или доменной модели?**
-   - **Примитивы** — в команде/обработчике (NotBlank, Positive)
-   - **Инварианты** — в доменной модели (количество участников группы)
+   - **Примитивы** - в команде/обработчике (NotBlank, Positive)
+   - **Инварианты** - в доменной модели (количество участников группы)
 
 4. **Можно ли вызывать Query из Command Handler?**
    - Технически можно, но **не рекомендуется** (нарушает CQRS)
    - Лучше загружать данные через Repository
 
 5. **Зачем разделять Request DTO (от клиента) и Command (внутренний)?**
-   - Request DTO — HTTP/JSON формат
-   - Command — внутренняя структура приложения
+   - Request DTO - HTTP/JSON формат
+   - Command - внутренняя структура приложения
    - Разделение позволяет независимо менять API и бизнес-логику
 
 ---
@@ -249,13 +249,13 @@ lab-04/
 ## Полезные ресурсы
 
 ### 🚀 Примеры кода
-- **[examples/](examples/)** — полная реализация для Request Service
+- **[examples/](examples/)** - полная реализация для Request Service
 
 ### 📖 Документация
 - **[Макет отчёта](Макет_отчета.md)**
 
 ### 🔗 Внешние ресурсы
-- [CQRS](https://martinfowler.com/bliki/CQRS.html) — Martin Fowler
+- [CQRS](https://martinfowler.com/bliki/CQRS.html) - Martin Fowler
 - [Command Query Separation](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
 
 ---
