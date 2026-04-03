@@ -1,0 +1,48 @@
+@startuml
+skinparam handwritten false
+skinparam responseMessageBelowArrow true
+
+actor "Пользователь" as User
+participant "Web UI / App" as UI
+participant "Words API" as API
+participant "Payment Gateway" as Payment
+participant "Email Service" as Email
+database "Database" as DB
+
+User -> UI: Нажать "Купить колоду"
+activate UI
+UI -> API: Инициировать покупку (deck_id)
+activate API
+
+API -> DB: Создать заказ (статус: PENDING)
+activate DB
+DB --> API: order_id
+deactivate DB
+
+API -> Payment: Charge(card_details, amount, order_id)
+activate Payment
+Payment --> API: payment_id, status: SUCCESS
+deactivate Payment
+
+API -> DB: Обновить статус заказа (CONFIRMED)
+activate DB
+DB --> API: OK
+deactivate DB
+
+API -> DB: Добавить колоду (deck_id) пользователю (user_id)
+activate DB
+DB --> API: OK
+deactivate DB
+
+API ->> Email: [Асинхронно] SendReceipt(user_email, order_id)
+activate Email
+Email --> API: OK (в очереди)
+deactivate Email
+
+API --> UI: 200 OK, purchase_successful
+deactivate API
+
+UI --> User: Показать экран "Колода добавлена!"
+deactivate UI
+
+@enduml

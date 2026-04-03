@@ -1,0 +1,40 @@
+@startuml
+skinparam handwritten false
+skinparam responseMessageBelowArrow true
+
+actor "Пользователь" as User
+participant "Web UI / App" as UI
+participant "Words API" as API
+participant "Payment Gateway" as Payment
+database "Database" as DB
+
+User -> UI: Нажать "Купить колоду"
+activate UI
+UI -> API: Инициировать покупку (deck_id)
+activate API
+
+API -> DB: Создать заказ (статус: PENDING)
+activate DB
+DB --> API: order_id
+deactivate DB
+
+API -> Payment: Charge(card_details, amount, order_id)
+activate Payment
+note right of Payment: У клиента недостаточно\nсредств на карте
+Payment --> API: ОШИБКА: Insufficient funds (402)
+deactivate Payment
+
+API -> DB: Обновить статус заказа (FAILED / ROLLBACK)
+activate DB
+DB --> API: OK
+deactivate DB
+
+note over API: Транзакция отменена,\nдоступ к колоде НЕ выдан
+
+API --> UI: 402 Payment Required, error_message
+deactivate API
+
+UI --> User: Показать экран "Оплата отклонена. Недостаточно средств"
+deactivate UI
+
+@enduml
