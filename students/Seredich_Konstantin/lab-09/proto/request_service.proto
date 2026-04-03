@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package pso;
+
+// ========================================
+// Messages — ПСО «Юго-Запад»
+// ========================================
+
+// Зона поисково-спасательной операции
+message Zone {
+  string name = 1;      // "North", "South", …
+  float lat_min = 2;
+  float lat_max = 3;
+  float lon_min = 4;
+  float lon_max = 5;
+}
+
+// Заявка на операцию
+message Request {
+  string request_id = 1;
+  string coordinator_id = 2;
+  Zone zone = 3;
+  string status = 4;              // DRAFT, ACTIVE, COMPLETED
+  string assigned_group_id = 5;
+  int64 created_at = 6;
+  int64 activated_at = 7;
+  int64 completed_at = 8;
+}
+
+message CreateRequestRequest {
+  string coordinator_id = 1;
+  Zone zone = 2;
+}
+
+message CreateRequestResponse {
+  string request_id = 1;
+  string status = 2;              // SUCCESS, ERROR
+  string error_message = 3;
+}
+
+message GetRequestRequest {
+  string request_id = 1;
+}
+
+message GetRequestResponse {
+  Request request = 1;
+  bool found = 2;
+}
+
+message ListRequestsRequest {
+  string status_filter = 1;
+  int32 limit = 2;
+}
+
+message ListRequestsResponse {
+  repeated Request requests = 1;
+  int32 total_count = 2;
+}
+
+message ActivateRequestRequest {
+  string request_id = 1;
+}
+
+message ActivateRequestResponse {
+  bool success = 1;
+  string error_message = 2;
+}
+
+message StreamActiveRequestsRequest {}
+
+// ========================================
+// Сервис заявок (gRPC)
+// ========================================
+
+service RequestService {
+  rpc CreateRequest(CreateRequestRequest) returns (CreateRequestResponse);
+  rpc GetRequest(GetRequestRequest) returns (GetRequestResponse);
+  rpc ListRequests(ListRequestsRequest) returns (ListRequestsResponse);
+  rpc ActivateRequest(ActivateRequestRequest) returns (ActivateRequestResponse);
+  // Server-side streaming: периодическая выдача активных заявок
+  rpc StreamActiveRequests(StreamActiveRequestsRequest) returns (stream Request);
+}
