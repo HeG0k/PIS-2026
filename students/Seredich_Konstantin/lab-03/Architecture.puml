@@ -1,0 +1,38 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "Infrastructure Layer" as Infra {
+    [REST Controller (API)] as API
+    [InMemoryCardRepository] as RepoImpl
+}
+
+package "Application Layer" as App {
+    interface "ReviewCardUseCase" as InputPort
+    interface "CardRepository" as OutputPort
+    [CardStudyService] as Service
+}
+
+package "Domain Layer" as Domain {
+    [Card (Entity)] as CardEntity
+}
+
+' Зависимости снаружи внутрь
+API ..> InputPort : "Использует"
+RepoImpl ..|> OutputPort : "Реализует"
+
+' Связи внутри Application
+Service ..|> InputPort : "Реализует"
+Service --> OutputPort : "Вызывает"
+Service --> CardEntity : "Манипулирует"
+
+' Правило зависимостей (Dependency Rule)
+note bottom of App
+  Application знает только о Domain.
+  Ничего не знает об Infrastructure.
+end note
+
+note bottom of Infra
+  Infrastructure зависит от Application
+  (реализует интерфейсы или вызывает их).
+end note
+@enduml
